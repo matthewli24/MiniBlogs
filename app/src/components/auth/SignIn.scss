@@ -1,0 +1,17 @@
+.SignInWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .signInForm {
+
+    .signInTitle {
+      font-size: 50px;
+      font-weight: 500;
+    }
+    .inputField {
+      .signInLabel {}
+      .signInInput {}
+    }
+  }
+}

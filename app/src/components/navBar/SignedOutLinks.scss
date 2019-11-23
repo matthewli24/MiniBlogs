@@ -1,0 +1,15 @@
+.signedOutLinksWrapper {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  
+  .signedOutLink {
+    color: #000;
+    font-size: 25px;
+    font-weight: 400;
+    margin-right: 20px;
+    text-decoration: none;
+    
+  }
+}

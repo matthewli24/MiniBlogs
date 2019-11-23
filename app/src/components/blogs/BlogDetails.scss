@@ -1,0 +1,36 @@
+.blogDetailsWrapper {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+
+  .blogTitle {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .blogAuthor {
+    font-size: 12px;
+    font-weight: 300px;
+    padding-top: 10px;
+  }
+  .blogDate {
+    font-size: 12px;
+    font-weight: 300px;
+  }
+  .divider {
+    width: 60%;
+    margin: 30px 0;
+  }
+  
+  .blogContent {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 34px;
+    padding: 10px 80px;
+    &::first-letter {
+      font-size: 40px;
+      font-weight: 400;
+    }
+  }
+}
