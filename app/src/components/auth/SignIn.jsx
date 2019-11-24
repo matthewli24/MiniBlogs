@@ -78,7 +78,9 @@ class SignIn extends Component {
             </input>
           </div>
           <div className="inputField">
-            <button className="signInButton">Sign In</button>
+            <div className="buttonContainer">
+              <button className="signInButton">Sign In</button>
+            </div>
           </div>
         </form>
       </div>
