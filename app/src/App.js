@@ -6,6 +6,7 @@ import Navbar from './components/navBar/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import BlogDetails from './components/blogs/BlogDetails';
 import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
 
 class App extends Component {
   render () {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path='/' component={Dashboard} />
             <Route path='/blog/:id' component={BlogDetails} />
             <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
           </Switch>
         </div>
       </BrowserRouter>

@@ -10,35 +10,24 @@ class SignIn extends Component {
   }
 
   handleOnFocus = (e) => {
-    if (e.target.id === "password"){
+    const activeLabel = `${e.target.id}Active`;
+    if (this.state.hasOwnProperty(activeLabel)) {
       this.setState({
-        passwordActive: true
+        [activeLabel]: true
       })
     }
-    else if (e.target.id === "email") {
-      this.setState({
-        emailActive: true
-      })
-    }
-   
   };
 
   handleOnBlur = (e) => {
-    if (e.target.id === "password" && e.target.value === "") {
+    const activeLabel = `${e.target.id}Active`;
+    if (this.state.hasOwnProperty(activeLabel) && e.target.value === "") {
       this.setState({
-        passwordActive: false
+        [activeLabel]: false
       })
     }
-
-    else if (e.target.id === "email" && e.target.value === "") {
-      this.setState({
-        emailActive: false
-      })
-    }
-  }
+  };
 
   handleOnChange = (e) => {
-    console.log(e.target.value);
     this.setState({
       [e.target.id]: e.target.value
     })
@@ -46,7 +35,7 @@ class SignIn extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    console.log(this.state.email, this.state.password);
   };
 
   render() {
