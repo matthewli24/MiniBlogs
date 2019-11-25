@@ -5,13 +5,18 @@ class CreateBlog extends Component {
   state = {
     title: '',
     content: '',
-    characterCount: 999
+    characterCount: 0
   }
 
   handleOnChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
+    if (e.target.id === "content") {
+      this.setState({
+        characterCount: e.target.value.length
+      })
+    }
   };
 
   handleOnSubmit = (e) => {
