@@ -7,7 +7,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import BlogDetails from './components/blogs/BlogDetails';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
-
+import CreateBlog from './components/blogs/CreateBlogs'
 class App extends Component {
   render () {
     return (
@@ -19,6 +19,7 @@ class App extends Component {
             <Route path='/blog/:id' component={BlogDetails} />
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
+            <Route path='/create' component={CreateBlog} />
           </Switch>
         </div>
       </BrowserRouter>

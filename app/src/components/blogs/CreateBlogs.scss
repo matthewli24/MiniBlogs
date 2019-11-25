@@ -1,0 +1,90 @@
+@import '../../assets/base/variables.scss';
+
+.CreateBlogWrapper {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  .createBlogForm {
+    width: 45em;
+    display: flex;
+    flex-direction: column;
+    .createBlogTitle {
+      font-size: 50px;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 4px;
+    }
+    .inputField {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 24px;
+      font-weight: 400;
+      padding: 30px 8px;
+
+      .blogTitleLabel {}
+
+      .blogTitleInput {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #c7c7c7;
+        font-family: inherit;
+        font-size: 20px;
+        font-weight: 300;
+        outline: none;
+        padding-left: 5px;
+        padding-bottom: 2px;
+      }
+
+      .blogContentLabel {
+        margin: 5px 0 15px 0;
+      }
+
+      .blogContent {
+        height: 300px;
+        border: 1px solid #e7e7e7; 
+        box-shadow: .25px .25px #a3a3a3;
+        font-size: 20px;
+        font-weight: 300;
+        outline: none;
+        padding: 0px 10px;
+        resize: none;
+      }
+
+      .characterCountContainer {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+        font-weight: 200;
+        .counter {
+          padding-right: 10px;
+        }
+        
+      }
+
+      .buttonContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .createBlogButton {
+          width: 100px;
+          font-family: inherit;
+          font-size: 20px;
+          font-weight: 500;
+          color: white;
+          background: $RoyalPurple;
+          border: none;
+          border-radius: 20px;
+          outline: none;
+          padding: 5px 0;
+
+          &:hover {
+            background: $Purple;
+          }
+        }
+      }
+    }
+  }
+}
