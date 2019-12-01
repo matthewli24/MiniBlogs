@@ -1,14 +1,16 @@
 import React from 'react';
 import './BlogList.scss';
 import BlogSummary from './BlogSummary';
+import BlogDetails from './BlogDetails';
 
-const BlogList = () => {
+const BlogList = ({ blogs }) => {
   return (
     <div className="blogListWrapper">
-      <BlogSummary />
-      <BlogSummary />
-      <BlogSummary />
-      <BlogSummary />
+      {blogs && blogs.map(blog => {
+        return (
+          <BlogSummary blog={blog} key={blog.id}/>
+        )
+      })}
     </div>
   );
 };
