@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### Additional Notes Connecting Redux To Firebase:
+http://react-redux-firebase.com/docs/getting_started
+http://docs.react-redux-firebase.com/history/v3.0.0/docs/v3-migration-guide.html

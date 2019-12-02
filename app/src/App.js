@@ -8,6 +8,7 @@ import BlogDetails from './components/blogs/BlogDetails';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreateBlog from './components/blogs/CreateBlogs'
+
 class App extends Component {
   render () {
     return (
