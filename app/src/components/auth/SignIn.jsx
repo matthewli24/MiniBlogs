@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './SignIn.scss';
 
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 
@@ -47,7 +48,8 @@ class SignIn extends Component {
     const passwordLabelClass = this.state.passwordActive ? "signInLabel-active" : "signInLabel"
 
     // destructuring authError property from props
-    const { authError } = this.props;
+    const { authError, auth } = this.props;
+    if (auth.uid) return <Redirect to='/' />
     
     return (
       <div className="SignInWrapper">
@@ -90,7 +92,8 @@ class SignIn extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    authError: state.auth.authError
+    authError: state.auth.authError,
+    auth: state.firebase.auth
   }
 };
 

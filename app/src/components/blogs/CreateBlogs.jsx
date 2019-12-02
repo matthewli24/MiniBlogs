@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import './CreateBlogs.scss';
+
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createBlog } from '../../store/actions/blogActions';
-import './CreateBlogs.scss';
+
+
 
 class CreateBlog extends Component {
   state = {
@@ -28,7 +32,8 @@ class CreateBlog extends Component {
   };
 
   render() {
-    
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to='/signin' />
     return (
       <div className="CreateBlogWrapper">
         <form className="createBlogForm" onSubmit={this.handleOnSubmit}>
@@ -66,10 +71,16 @@ class CreateBlog extends Component {
 
 }
 
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     createBlog: (blog) => dispatch(createBlog(blog))
   }
 };
 
-export default connect(null, mapDispatchToProps)(CreateBlog);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateBlog);
