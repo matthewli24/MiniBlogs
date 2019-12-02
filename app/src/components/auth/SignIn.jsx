@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './SignIn.scss';
 
+import { connect } from 'react-redux';
+import { signIn } from '../../store/actions/authActions';
+
 class SignIn extends Component {
   state = {
     email: '',
@@ -35,12 +38,16 @@ class SignIn extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.email, this.state.password);
+    let creds = {email : this.state.email, password: this.state.password};
+    this.props.signIn(creds);
   };
 
   render() {
     const emailLabelClass = this.state.emailActive ? "signInLabel-active" : "signInLabel"
     const passwordLabelClass = this.state.passwordActive ? "signInLabel-active" : "signInLabel"
+
+    // destructuring authError property from props
+    const { authError } = this.props;
     
     return (
       <div className="SignInWrapper">
@@ -71,6 +78,9 @@ class SignIn extends Component {
               <button className="signInButton">Sign In</button>
             </div>
           </div>
+
+          <div className="signInError">{ authError ? <p>{ authError }</p> : null }</div>
+
         </form>
       </div>
     );
@@ -78,4 +88,16 @@ class SignIn extends Component {
 
 }
 
-export default SignIn;
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
