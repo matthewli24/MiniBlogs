@@ -10,7 +10,7 @@ const SignedInLinks = (props) => {
     <ul className="signedInLinksWrapper">
       <li><NavLink to='/create' className="signedInLink">Create</NavLink></li>
       <li><a onClick={props.signOut} className="signedInLink">SignOut</a></li>
-      <li><NavLink to='/' className="signedInLink">Username</NavLink></li>
+      <li><NavLink to='/' className="signedInLink">{props.profile.username}</NavLink></li>
     </ul>
   );
 };

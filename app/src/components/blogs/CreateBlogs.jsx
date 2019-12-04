@@ -29,6 +29,7 @@ class CreateBlog extends Component {
     e.preventDefault();
     let blog = {title: this.state.title, content: this.state.content};
     this.props.createBlog(blog);
+    this.props.history.push('/');
   };
 
   render() {

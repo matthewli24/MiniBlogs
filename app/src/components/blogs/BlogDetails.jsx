@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect} from 'react-redux-firebase';
+import moment from 'moment';
 
 const BlogDetails = (props) => {
   const { blog, auth } = props;
@@ -14,7 +15,7 @@ const BlogDetails = (props) => {
       <div className="blogDetailsWrapper">
         <div className="blogTitle">{ blog.title }</div>
         <div className="blogAuthor">Written By { blog.author }</div>
-        <div className="blogDate">November 23, 2019</div>
+        <div className="blogDate">{ moment(blog.createdAt.toDate()).calendar() }</div>
         <hr className="divider"/>
         <div className="blogContent">{ blog.content }</div>
         <hr className="divider"/>

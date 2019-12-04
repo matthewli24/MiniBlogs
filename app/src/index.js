@@ -10,7 +10,7 @@ import rootReducer from './store/reducers/rootReducer';
 import { Provider } from 'react-redux';
 
 import { reduxFirestore, getFirestore, createFirestoreInstance } from 'redux-firestore';
-import { reactReduxFirebase, getFirebase, ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import { getFirebase, ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import firebaseConfig from './config/firebaseConfig';
 import firebase from 'firebase/app';
 
@@ -21,9 +21,15 @@ const store = createStore(rootReducer,
   )
 );
 
+const rrfConfig = {
+  userProfile: "users",
+  useFirestoreForProfile: true,
+  // attachAuthisReady: true
+};
+
 const rrfProps = {
   firebase,
-  config: firebaseConfig,
+  config: rrfConfig,
   dispatch: store.dispatch,
   createFirestoreInstance // <- needed if using firestore
 }
