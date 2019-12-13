@@ -3,13 +3,29 @@
   display: flex;
   list-style: none;
   padding: 0;
-  .signedInLink {
-    color: #000;
-    cursor: pointer;
-    font-size: 25px;
-    font-weight: 400;
-    margin-right: 20px;
-    text-decoration: none;
-    
+  .linkContainter {
+    display: flex; 
+  
+    .signedInLink {
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 25px;
+      font-weight: 400;
+      margin-right: 20px;
+      text-decoration: none;
+      
+      &:after{
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #ffffff;
+        transition: width 350ms ease-in;
+      }
+      &:hover:after {
+        width: 100%;
+      }
+    }
   }
+  
 }

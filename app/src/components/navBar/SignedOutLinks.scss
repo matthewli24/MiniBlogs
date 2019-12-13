@@ -1,15 +1,32 @@
 .signedOutLinksWrapper {
   width: 100%;
+  align-items: center;
   display: flex;
   list-style: none;
   padding: 0;
+  .linkContainter {
+    display: flex; 
+
+    .signedOutLink {
+      color: #ffffff;
+      font-size: 25px;
+      font-weight: 400;
+      margin-right: 20px;
+      text-decoration: none;
   
-  .signedOutLink {
-    color: #000;
-    font-size: 25px;
-    font-weight: 400;
-    margin-right: 20px;
-    text-decoration: none;
-    
+      &:after{
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #ffffff;
+        transition: width 350ms ease-in;
+      }
+      &:hover:after {
+        width: 100%;
+      }
+    }
   }
+
 }
+

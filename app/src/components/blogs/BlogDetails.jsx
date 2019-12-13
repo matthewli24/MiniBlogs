@@ -16,9 +16,9 @@ const BlogDetails = (props) => {
         <div className="blogTitle">{ blog.title }</div>
         <div className="blogAuthor">Written By { blog.author }</div>
         <div className="blogDate">{ moment(blog.createdAt.toDate()).calendar() }</div>
-        <hr className="divider"/>
+        <hr className="topDivider"/>
         <div className="blogContent">{ blog.content }</div>
-        <hr className="divider"/>
+        <hr className="bottomDivider"/>
       </div>
     )
   } 

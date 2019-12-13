@@ -8,9 +8,9 @@ import { signOut} from '../../store/actions/authActions';
 const SignedInLinks = (props) => {
   return (
     <ul className="signedInLinksWrapper">
-      <li><NavLink to='/create' className="signedInLink">Create</NavLink></li>
-      <li><a onClick={props.signOut} className="signedInLink">SignOut</a></li>
-      <li><NavLink to='/' className="signedInLink">{props.profile.username}</NavLink></li>
+      <li className="linkContainter"><NavLink to='/create' className="signedInLink">Create</NavLink></li>
+      <li className="linkContainter"><a onClick={props.signOut} className="signedInLink">SignOut</a></li>
+      <li className="linkContainter"><NavLink to='/' className="signedInLink">{props.profile.username}</NavLink></li>
     </ul>
   );
 };

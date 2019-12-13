@@ -35,7 +35,7 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect([
     { collection: 'blogs', orderBy: ['createdAt', 'desc'] },
-    { collection: 'notifications', limit: 3, orderBy: ['time', 'desc'] }
+    { collection: 'notifications', limit: 10, orderBy: ['time', 'desc'] }
   ])
 )(Dashboard);
 
