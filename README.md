@@ -4,6 +4,12 @@ Short and Straight To The Point Blogs
 ## Demo
 https://mini-blogs.firebaseapp.com/
 
+## Sign In and Sign Up With Firebase Auth
+<img src="./demos/miniblogs1.gif" title='demo1' width='' alt='demo1'>
+
+## Creating a Mini Blog
+<img src="./demos/miniblogs2.gif" title='demo2' width='' alt='demo2'>
+
 ## Dependencies
 
 * React Redux
